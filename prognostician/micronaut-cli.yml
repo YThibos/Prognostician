@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: be.jcrafters.thiboya
+---
+testFramework: junit
+sourceLanguage: java
