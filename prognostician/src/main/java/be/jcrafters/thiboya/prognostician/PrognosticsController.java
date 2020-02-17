@@ -16,15 +16,12 @@ public class PrognosticsController {
 	@Post(consumes = MediaType.TEXT_PLAIN, produces = MediaType.TEXT_PLAIN)
 	public String parseAll(String data) {
 		Logger.getLogger(this.getClass().getSimpleName()).log(Level.INFO, "Request received. Payload: \n" + data);
-		return prognosticsService.toResults(data);
+		return prognosticsService.parse(data);
 	}
 
 	@Get(produces = MediaType.TEXT_PLAIN)
 	public String getAll() {
-		return "Not implemented yet. Using dummy values: \n" +
-		       "Joske 1-1 \n" +
-		       "Jefke 2-1 \n" +
-		       "Sjarel 5-0 \n";
+		return prognosticsService.getAll().toString();
 	}
 
 }
