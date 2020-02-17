@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 
 import io.micronaut.core.util.StringUtils;
 
-class PrognosticsParser {
+class PrognosticsService {
 
 	String toResults(String rawData) {
 		List<String> results = Stream.of(rawData.split("\n"))

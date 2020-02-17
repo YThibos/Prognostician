@@ -11,13 +11,12 @@ import io.micronaut.http.annotation.Post;
 @Controller("/prognostics")
 public class PrognosticsController {
 
-	private PrognosticsParser prognosticsParser = new PrognosticsParser();
+	private PrognosticsService prognosticsService = new PrognosticsService();
 
 	@Post(consumes = MediaType.TEXT_PLAIN, produces = MediaType.TEXT_PLAIN)
 	public String parseAll(String data) {
 		Logger.getLogger(this.getClass().getSimpleName()).log(Level.INFO, "Request received. Payload: \n" + data);
-		String parsedData = prognosticsParser.toResults(data);
-		return parsedData.toString();
+		return prognosticsService.toResults(data);
 	}
 
 	@Get(produces = MediaType.TEXT_PLAIN)
